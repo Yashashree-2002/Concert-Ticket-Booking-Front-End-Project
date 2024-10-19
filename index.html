@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concert Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1> Concert Booking</h1>
+
+        <!-- Concert Selection Form -->
+        <form id="bookingForm">
+            <label for="concert">Select a Concert Date and Venue:</label>
+            <select id="concert" required>
+                <option value="" disabled selected>Select a concert</option>
+                <option value="October 15, 2024 - London" data-price="80">October 15, 2024 - London</option>
+                <option value="November 10, 2024 - New York" data-price="80">November 10, 2024 - New York</option>
+                <option value="December 5, 2024 - Sydney" data-price="80">December 5, 2024 - Sydney</option>
+            </select>
+
+            <label for="ticketType">Select Ticket Type:</label>
+            <select id="ticketType" required>
+                <option value="" disabled selected>Select ticket type</option>
+                <option value="General Admission" data-price="80">General Admission ($80)</option>
+                <option value="VIP" data-price="150">VIP ($150)</option>
+            </select>
+
+            <label for="quantity">Select Ticket Quantity:</label>
+            <input type="number" id="quantity" min="1" required>
+
+            <button type="button" id="confirmBooking">Confirm Booking</button>
+        </form>
+
+        <!-- Error message -->
+        <div id="errorMessage" class="error"></div>
+
+        <!-- Booking Summary -->
+        <div id="bookingSummary" class="summary hidden">
+            <h2>Booking Summary</h2>
+            <p><strong>Concert:</strong> <span id="summaryConcert"></span></p>
+            <p><strong>Ticket Type:</strong> <span id="summaryTicketType"></span></p>
+            <p><strong>Quantity:</strong> <span id="summaryQuantity"></span></p>
+            <p><strong>Total Price:</strong> $<span id="summaryTotalPrice"></span></p>
+            <button type="button" id="editBooking">Edit Booking</button>
+            <button type="submit" id="confirmFinal">Confirm</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
